@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Special Offers - Home Decor Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        /* NAVBAR */
+        header {
+            background-color: #222;
+            padding: 15px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+        }
+
+        .menu li {
+            position: relative;
+        }
+
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .menu li a:hover {
+            background-color: #ff9800;
+        }
+
+        /* DROPDOWN */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 180px;
+            top: 40px;
+        }
+
+        .dropdown-content a {
+            padding: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* OFFER BANNER */
+        .offer-banner {
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .offer-banner h1 {
+            font-size: 40px;
+        }
+
+        .offer-banner p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        /* OFFER SECTION */
+        .offers {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .offer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .offer-card {
+            background: white;
+            width: 280px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .offer-card:hover {
+            transform: scale(1.05);
+        }
+
+        .offer-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .offer-card h3 {
+            margin: 15px 0 5px;
+        }
+
+        .price {
+            margin-bottom: 15px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: gray;
+            margin-right: 10px;
+        }
+
+        .new-price {
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-bottom: 15px;
+            padding: 8px 15px;
+            border: none;
+            background: #ff5722;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e64a19;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="navbar">
+            <div class="logo"> Home Decor</div>
+            <ul class="menu">
+                <li><a href="C:\Users\Spider\OneDrive\Documents\wp folder msc\home page.html">Home</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Categories ▼</a>
+                    <div class="dropdown-content">
+                        <a href="C:\Users\Spider\OneDrive\Documents\wp folder msc\wall art.html">Wall Art</a>
+                        <a href="C:\Users\Spider\OneDrive\Documents\wp folder msc\led.html">LED Lights</a>
+                        <a href="C:\Users\Spider\OneDrive\Documents\wp folder msc\Furniture.html">Furniture</a>
+                        <a href="C:\Users\Spider\OneDrive\Documents\wp folder msc\Curtains.html">Curtains</a>
+                    </div>
+                </li>
+
+                <li><a href="C:\Users\Spider\OneDrive\Documents\wp folder msc\offer page.html">Offers</a></li>
+                <li><a href="C:\Users\Spider\OneDrive\Documents\wp folder msc\contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- OFFER BANNER -->
+    <section class="offer-banner">
+        <h1> Mega Sale - Up to 50% OFF!</h1>
+        <p>Limited Time Offer on Selected Home Decor Items</p>
+    </section>
+
+    <!-- OFFERS SECTION -->
+    <section class="offers">
+        <h2>Today's Best Deals</h2>
+
+        <div class="offer-container">
+
+            <div class="offer-card">
+                <div class="discount-badge">-40%</div>
+                <img src="C:\Users\Spider\OneDrive\Pictures\download (25).jpg".jpg" alt="Wall Art">
+                <h3>Modern Canvas Art</h3>
+                <div class="price">
+                    <span class="old-price">$6000</span>
+                    <span class="new-price">$5500</span>
+                </div>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="discount-badge">-30%</div>
+                <img src="C:\Users\Spider\OneDrive\Pictures\download (2).webp" alt="Sofa">
+                <h3>Luxury Sofa</h3>
+                <div class="price">
+                    <span class="old-price">$6000</span>
+                    <span class="new-price">$4600</span>
+                </div>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="discount-badge">-50%</div>
+                <img src="C:\Users\Spider\OneDrive\Pictures\download (26).jpg" alt="LED Lights">
+                <h3>RGB LED Strip Lights</h3>
+                <div class="price">
+                    <span class="old-price">$8000</span>
+                    <span class="new-price">$6000</span>
+                </div>
+                <button>Buy Now</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+    </footer>
+<a href="C:\Users\Spider\OneDrive\Documents\wp folder msc\contact.html">Next</a>
+</body>
+</html>

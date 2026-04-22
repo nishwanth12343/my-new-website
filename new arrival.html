@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Arrivals - Home Decor Shop</title>
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f8f6f2;
+}
+
+.new-arrivals {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.new-arrivals h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #3e3e3e;
+}
+
+.new-arrivals p {
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.price {
+    font-size: 18px;
+    color: #b08968;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #b08968;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #7f5539;
+}
+</style>
+</head>
+
+<body>
+
+<section class="new-arrivals">
+    <h2> New Arrivals</h2>
+    <p>Discover our latest home decor pieces curated for your space.</p>
+
+    <div class="products">
+        <div class="product-card">
+            <img src="C:\Users\Spider\OneDrive\Pictures\download (28).jpg" alt="Decor Item 1">
+            <div class="product-info">
+                <h3>Modern Ceramic Vase</h3>
+                <div class="price">$45.00</div>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="C:\Users\Spider\OneDrive\Pictures\download (29).jpg" alt="Decor Item 2">
+            <div class="product-info">
+                <h3>Boho Wall Mirror</h3>
+                <div class="price">$89.00</div>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="C:\Users\Spider\OneDrive\Pictures\download (30).jpg" alt="Decor Item 3">
+            <div class="product-info">
+                <h3>Luxury Throw Pillow</h3>
+                <div class="price">$29.00</div>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="C:\Users\Spider\OneDrive\Pictures\download (31).jpg" alt="Decor Item 4">
+            <div class="product-info">
+                <h3>Wooden Table Lamp</h3>
+                <div class="price">$120.00</div>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+<a href="home page.html" class="home page-btn">Home page</a>
+</body>
+</html>

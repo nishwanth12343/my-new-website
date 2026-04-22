@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+    }
+    .box {
+      width: 350px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: green;
+      color: white;
+      border: none;
+    }
+    .error {
+      color: red;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Registration Form</h2>
+
+  <form onsubmit="return validateForm()">
+
+    <!-- Name -->
+    <input type="text" id="name" placeholder="Enter Name">
+    <div id="nameError" class="error"></div>
+
+    <!-- Password -->
+    <input type="password" id="password" placeholder="Enter Password">
+    <div id="passError" class="error"></div>
+
+    <!-- Phone -->
+    <input type="text" id="phone" placeholder="Enter Phone Number">
+    <div id="phoneError" class="error"></div>
+
+    <!-- Age -->
+    <input type="number" id="age" placeholder="Enter Age">
+    <div id="ageError" class="error"></div>
+
+    <!-- District -->
+    <select id="district">
+      <option value="">Select District</option>
+      <option>Chennai</option>
+      <option>Coimbatore</option>
+      <option>Madurai</option>
+      <option>Salem</option>
+    </select>
+    <div id="districtError" class="error"></div>
+
+    <!-- Text Area -->
+    <textarea id="address" placeholder="Enter Address"></textarea>
+    <div id="addressError" class="error"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+function validateForm() {
+  let name = document.getElementById("name").value.trim();
+  let password = document.getElementById("password").value;
+  let phone = document.getElementById("phone").value;
+  let age = document.getElementById("age").value;
+  let district = document.getElementById("district").value;
+  let address = document.getElementById("address").value.trim();
+
+  let valid = true;
+
+  // Name
+  if (name === "") {
+    document.getElementById("nameError").innerText = "Name is required";
+    valid = false;
+  } else {
+    document.getElementById("nameError").innerText = "";
+  }
+
+  // Password
+  if (password.length < 6) {
+    document.getElementById("passError").innerText = "Password must be at least 6 characters";
+    valid = false;
+  } else {
+    document.getElementById("passError").innerText = "";
+  }
+
+  // Phone
+  if (!/^[0-9]{10}$/.test(phone)) {
+    document.getElementById("phoneError").innerText = "Enter valid 10-digit number";
+    valid = false;
+  } else {
+    document.getElementById("phoneError").innerText = "";
+  }
+
+  // Age
+  if (age === "" || age < 1 || age > 100) {
+    document.getElementById("ageError").innerText = "Enter valid age";
+    valid = false;
+  } else {
+    document.getElementById("ageError").innerText = "";
+  }
+
+  // District
+  if (district === "") {
+    document.getElementById("districtError").innerText = "Select district";
+    valid = false;
+  } else {
+    document.getElementById("districtError").innerText = "";
+  }
+
+  // Address
+  if (address === "") {
+    document.getElementById("addressError").innerText = "Address required";
+    valid = false;
+  } else {
+    document.getElementById("addressError").innerText = "";
+  }
+
+  return valid;
+}
+</script>
+<a href="C:\Users\Spider\Documents\New folder\wp folder msc\home page.html">home</a>
+</body>
+</html>

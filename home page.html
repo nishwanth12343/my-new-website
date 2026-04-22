@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Home Decor Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* NAVIGATION BAR */
+header {
+    background-color: #222;
+    padding: 15px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.menu li a:hover {
+    background-color: #ff9800;
+}
+
+/* DROPDOWN */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 180px;
+    top: 40px;
+}
+
+.dropdown-content a {
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* CAROUSEL */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* CATEGORY SECTION */
+.categories {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.category-box {
+    background: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.category-box:hover {
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="navbar">
+<div class="logo">Home Decor</div>
+<ul class="menu">
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+
+<li class="dropdown">
+<a href="#">Categories ▼</a>
+<div class="dropdown-content">
+<a href="#">Wall Art</a>
+<a href="#">LED Lights</a>
+<a href="#">Furniture</a>
+<a href="#">Curtains</a>
+</div>
+</li>
+
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+</header>
+
+<!-- ✅ CAROUSEL ADDED -->
+<section class="carousel">
+
+<div class="slides">
+<img src="C:\Users\Spider\Downloads\download (4).jpg"1200x1200>
+<img src="C:\Users\Spider\Downloads\download (10).jpg"600x800>
+</div>
+
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+
+</section>
+
+<!-- CATEGORY SECTION -->
+<section class="categories">
+<h2>Shop By Category</h2>
+
+<div class="category-container">
+<div class="C:\Users\Spider\Documents\New folder\wp folder msc\wall art.html">Wall Art</div>
+<div class="category-box">LED Lights</div>
+<div class="category-box">Furniture</div>
+<div class="category-box">Curtains</div>
+</div>
+
+</section>
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide(i){
+    slides.forEach(s => s.classList.remove("active"));
+    slides[i].classList.add("active");
+}
+
+document.querySelector(".next").onclick = function(){
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}
+
+document.querySelector(".prev").onclick = function(){
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+}
+
+// Auto slide
+setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}, 3000);
+</script>
+
+</body>
+</html>

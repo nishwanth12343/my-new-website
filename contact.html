@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #eef2f3;
+    }
+    .container {
+      width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: blue;
+      color: white;
+      border: none;
+    }
+    .error {
+      color: red;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Contact Form</h2>
+
+  <form onsubmit="return validateForm()">
+
+    <!-- Name -->
+    <input type="text" id="name" placeholder="Enter Name">
+    <div id="nameError" class="error"></div>
+
+    <!-- Email -->
+    <input type="text" id="email" placeholder="Enter Email">
+    <div id="emailError" class="error"></div>
+
+    <!-- Phone -->
+    <input type="text" id="phone" placeholder="Enter Phone">
+    <div id="phoneError" class="error"></div>
+
+    <!-- Gender -->
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <div id="genderError" class="error"></div>
+
+    <!-- Country -->
+    <select id="country">
+      <option value="">Select Country</option>
+      <option>India</option>
+      <option>USA</option>
+      <option>UK</option>
+    </select>
+    <div id="countryError" class="error"></div>
+
+    <!-- Subject -->
+    <input type="text" id="subject" placeholder="Enter Subject">
+    <div id="subjectError" class="error"></div>
+
+    <!-- Message -->
+    <textarea id="message" placeholder="Enter Message"></textarea>
+    <div id="messageError" class="error"></div>
+
+    <!-- Terms -->
+    <input type="checkbox" id="terms"> I accept Terms & Conditions
+    <div id="termsError" class="error"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+function validateForm() {
+
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let phone = document.getElementById("phone").value;
+  let subject = document.getElementById("subject").value.trim();
+  let message = document.getElementById("message").value.trim();
+  let country = document.getElementById("country").value;
+  let terms = document.getElementById("terms").checked;
+  let gender = document.querySelector('input[name="gender"]:checked');
+
+  let valid = true;
+
+  // Name
+  if (name === "") {
+    document.getElementById("nameError").innerText = "Name required";
+    valid = false;
+  } else document.getElementById("nameError").innerText = "";
+
+  // Email
+  if (!/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email)) {
+    document.getElementById("emailError").innerText = "Invalid email";
+    valid = false;
+  } else document.getElementById("emailError").innerText = "";
+
+  // Phone
+  if (!/^[0-9]{10}$/.test(phone)) {
+    document.getElementById("phoneError").innerText = "Enter valid 10-digit number";
+    valid = false;
+  } else document.getElementById("phoneError").innerText = "";
+
+  // Gender
+  if (!gender) {
+    document.getElementById("genderError").innerText = "Select gender";
+    valid = false;
+  } else document.getElementById("genderError").innerText = "";
+
+  // Country
+  if (country === "") {
+    document.getElementById("countryError").innerText = "Select country";
+    valid = false;
+  } else document.getElementById("countryError").innerText = "";
+
+  // Subject
+  if (subject === "") {
+    document.getElementById("subjectError").innerText = "Subject required";
+    valid = false;
+  } else document.getElementById("subjectError").innerText = "";
+
+  // Message
+  if (message.length < 10) {
+    document.getElementById("messageError").innerText = "Message must be at least 10 characters";
+    valid = false;
+  } else document.getElementById("messageError").innerText = "";
+
+  // Terms
+  if (!terms) {
+    document.getElementById("termsError").innerText = "You must accept terms";
+    valid = false;
+  } else document.getElementById("termsError").innerText = "";
+
+  return valid;
+}
+</script>
+
+</body>
+</html>
